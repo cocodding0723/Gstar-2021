@@ -3,7 +3,7 @@ using UnityEngine;
 public class GrapplingGun : MonoBehaviour {
     
     public LayerMask whatIsGrappleable;
-    public Transform gunTip, camera, player;
+    public Transform gunTip, _camera, player;
     [SerializeField] private KeyCode grappleKey = KeyCode.E;
     private Vector3 grapplePoint;
     private float maxDistance = 100f;
@@ -28,7 +28,7 @@ public class GrapplingGun : MonoBehaviour {
     /// </summary>
     void StartGrapple() {
         RaycastHit hit;
-        if (Physics.Raycast(camera.position, camera.forward, out hit, maxDistance, whatIsGrappleable)) {
+        if (Physics.Raycast(_camera.position, _camera.forward, out hit, maxDistance, whatIsGrappleable)) {
             grapplePoint = hit.point;
             joint = player.gameObject.AddComponent<SpringJoint>();
             joint.autoConfigureConnectedAnchor = false;

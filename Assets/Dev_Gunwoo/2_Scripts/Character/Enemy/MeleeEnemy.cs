@@ -22,5 +22,10 @@ namespace Character
         {
             throw new System.NotImplementedException();
         }
+
+        protected override IEnumerator Trace()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
