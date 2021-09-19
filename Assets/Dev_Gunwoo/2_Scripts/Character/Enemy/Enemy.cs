@@ -24,8 +24,6 @@ namespace Character
         protected float attackRange = 5f;                   // 공격 범위
         [SerializeField]
         protected float moveSpeed = 5f;
-        [SerializeField]
-        protected float attackDelay = 5f;
 
         protected State prevState;                          // 이전 상태
         protected State currentState;                       // 현재 상태
@@ -37,7 +35,7 @@ namespace Character
         protected virtual void Start(){
             _fieldOfView = this.GetComponentInChildren<FieldOfView>();      // 자식오브젝트 내에 있는 field of view 캐싱
             _navMeshAgent = this.GetComponent<NavMeshAgent>();              // navmeshagent 캐싱
-            _target = FindObjectOfType<PlayerCharacter>().transform;                 // 플레이어 캐싱
+            _target = FindObjectOfType<PlayerCharacter>().transform;        // 플레이어 캐싱
 
             prevState = State.Idle;
             currentState = State.Patrol;
@@ -71,7 +69,7 @@ namespace Character
             }
         }
 
-        #region 상속후 정의해야하는 부분
+        #region 상속 후 정의해야하는 부분
         protected abstract IEnumerator Idle();
         protected abstract IEnumerator Patrol();
         protected abstract IEnumerator Trace();
