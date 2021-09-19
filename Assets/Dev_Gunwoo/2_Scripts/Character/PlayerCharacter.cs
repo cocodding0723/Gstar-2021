@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Character
 {
-    public class Player : Character
+    public class PlayerCharacter : Character
     {
         // TODO : 플레이어 사망시 발생하는 이벤트
         // 1. 쓰러지는 카메라 워크

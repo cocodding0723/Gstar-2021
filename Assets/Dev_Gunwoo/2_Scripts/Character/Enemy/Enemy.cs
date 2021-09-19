@@ -37,7 +37,7 @@ namespace Character
         protected virtual void Start(){
             _fieldOfView = this.GetComponentInChildren<FieldOfView>();      // 자식오브젝트 내에 있는 field of view 캐싱
             _navMeshAgent = this.GetComponent<NavMeshAgent>();              // navmeshagent 캐싱
-            _target = FindObjectOfType<Player>().transform;                 // 플레이어 캐싱
+            _target = FindObjectOfType<PlayerCharacter>().transform;                 // 플레이어 캐싱
 
             prevState = State.Idle;
             currentState = State.Patrol;
