@@ -71,10 +71,12 @@ namespace Character
             }
         }
 
+        #region 상속후 정의해야하는 부분
         protected abstract IEnumerator Idle();
         protected abstract IEnumerator Patrol();
         protected abstract IEnumerator Trace();
         protected abstract IEnumerator Attack();
+        #endregion
 
         protected virtual void OnDrawGizmosSelected() {
             Gizmos.color = Color.red;
