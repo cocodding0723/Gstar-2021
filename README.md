@@ -11,6 +11,7 @@
 | --- | --- |
 | 게임 명 | Rope and Shoot | 
 | 장르 | FPS, Shooting |
+| 엔진 | Unity 2019.4.30f1 |
 --- 
 ## 2. 게임 기능
 --- 
