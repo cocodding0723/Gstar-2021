@@ -6,38 +6,40 @@ public class PlayerMovement : MonoBehaviour
 {
     float playerHeight = 2f;
 
-    [SerializeField] Transform orientation;
+    [SerializeField] private Transform orientation;
 
     [Header("Movement")]
-    [SerializeField] float moveSpeed = 6f;
-    [SerializeField] float airMultiplier = 0.4f;
+    [SerializeField] private float moveSpeed = 6f;
+    [SerializeField] private float airMultiplier = 0.4f;
     float movementMultiplier = 10f;
 
     [Header("Sprinting")]
-    [SerializeField] float walkSpeed = 4f;
-    [SerializeField] float sprintSpeed = 6f;
-    [SerializeField] float acceleration = 10f;
+    [SerializeField] private float walkSpeed = 4f;
+    [SerializeField] private float sprintSpeed = 6f;
+    [SerializeField] private float acceleration = 10f;
 
     [Header("Jumping")]
     public float jumpForce = 5f;
 
     [Header("Keybinds")]
-    [SerializeField] KeyCode jumpKey = KeyCode.Space;
-    [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
-    [SerializeField] KeyCode couchKey = KeyCode.LeftControl;
+    [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
+    [SerializeField] private KeyCode couchKey = KeyCode.LeftControl;
 
     [Header("Drag")]
-    [SerializeField] float groundDrag = 6f;
-    [SerializeField] float airDrag = 2f;
-    [SerializeField] float slideDrag = 4f;
+    [SerializeField] private float groundDrag = 6f;
+    [SerializeField] private float airDrag = 2f;
+    [SerializeField] private float slideDrag = 4f;
+    [SerializeField] private float grapplingDrag = 0f;
 
     float horizontalMovement;
     float verticalMovement;
 
     [Header("Ground Detection")]
-    [SerializeField] Transform groundCheck;
-    [SerializeField] LayerMask groundMask;
-    [SerializeField] float groundDistance = 0.2f;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float groundDistance = 0.2f;
+    [SerializeField] 
     public bool isGrounded { get; private set; }
 
     Vector3 moveDirection;
@@ -48,16 +50,23 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
     private bool crouching = false;
     private bool isSlope = false;
+    private bool afterGrappling = false;
 
-    Rigidbody rb;
-
-    RaycastHit slopeHit;
+    private Rigidbody rb;
+    private RaycastHit slopeHit;
+    [SerializeField] private GrapplingGun grapplingGun = null;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         playerScale = transform.localScale;
+    }
+
+    private void FixedUpdate()
+    {
+        MovePlayer();
+        SlopeCheck();
     }
 
     private void Update()
@@ -144,17 +153,16 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded && !crouching)
         {
             rb.drag = groundDrag;
+            afterGrappling = false;
         }
-        if (!isGrounded)
+        if (!isGrounded && !grapplingGun.IsGrappling() && rb.useGravity && !afterGrappling)
         {
             rb.drag = airDrag;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        MovePlayer();
-        SlopeCheck();
+        if (!isGrounded && grapplingGun.IsGrappling()){
+            rb.drag = grapplingDrag;
+            afterGrappling = true;
+        }
     }
 
     void MovePlayer()
