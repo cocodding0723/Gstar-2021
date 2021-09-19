@@ -73,6 +73,7 @@ namespace Character
 
         protected abstract IEnumerator Idle();
         protected abstract IEnumerator Patrol();
+        protected abstract IEnumerator Trace();
         protected abstract IEnumerator Attack();
 
         protected virtual void OnDrawGizmosSelected() {
