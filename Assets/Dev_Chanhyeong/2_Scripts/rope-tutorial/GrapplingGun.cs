@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class GrapplingGun : MonoBehaviour {
     
-    private Vector3 grapplePoint;
     public LayerMask whatIsGrappleable;
     public Transform gunTip, camera, player;
+    [SerializeField] private KeyCode grappleKey = KeyCode.E;
+    private Vector3 grapplePoint;
     private float maxDistance = 100f;
-    private SpringJoint joint;
+    private SpringJoint joint = null;
+
+    [SerializeField] private float spring = 4f;
+    [SerializeField] private float damper = 7f;
+    [SerializeField] private float massSalce = 4.5f;
+
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
@@ -35,9 +41,9 @@ public class GrapplingGun : MonoBehaviour {
             joint.minDistance = distanceFromPoint * 0.25f;
 
             //Adjust these values to fit your game.
-            joint.spring = 4.5f;
-            joint.damper = 7f;
-            joint.massScale = 4.5f;
+            joint.spring = spring;
+            joint.damper = damper; 
+            joint.massScale = massSalce;
         }
     }
 
