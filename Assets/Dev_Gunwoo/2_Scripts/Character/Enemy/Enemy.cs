@@ -30,7 +30,6 @@ namespace Character
 
         protected Transform _target;                        // Player
         protected NavMeshAgent _navMeshAgent;
-        protected Coroutine fsm = null;
 
         protected virtual void Start(){
             _fieldOfView = this.GetComponentInChildren<FieldOfView>();      // 자식오브젝트 내에 있는 field of view 캐싱
@@ -39,11 +38,8 @@ namespace Character
 
             prevState = State.Idle;
             currentState = State.Patrol;
-            
-            fsm = StartCoroutine(FSM());
         }
-
-        protected override void Update() {
+        protected override void Update(){
             base.Update();
 
             if (_fieldOfView.visibleTargets.Count > 0){                                             // 시야 내에 플레이어가 들어 온다면
@@ -54,19 +50,15 @@ namespace Character
                     currentState = State.Attack;                                                    // 공격 상태
                 }
             }
+
+            if (currentState != prevState){                             // 현재 상태와 이전 상태가 다르면 실행
+                prevState = currentState;                               // 이전 상태 저장
+                StartCoroutine(currentState.ToString());                // 열거형을 string으로 변환시켜 해당 코루틴 실행
+            }
         }
 
         protected override void Die(){
-            StopCoroutine(fsm);
-        }
-
-        protected virtual IEnumerator FSM(){
-            while (true){
-                if (currentState != prevState){                             // 현재 상태와 이전 상태가 다르면 실행
-                    prevState = currentState;                               // 이전 상태 저장
-                    yield return StartCoroutine(currentState.ToString());   // 열거형을 string으로 변환시켜 해당 코루틴 실행
-                }
-            }
+            
         }
 
         #region 상속 후 정의해야하는 부분

@@ -1,4 +1,7 @@
+using System;
+using System.Collections;
 using UnityEngine;
+using ObjectTemplate.Pattern;
 
 namespace Weapon
 {
@@ -7,10 +10,22 @@ namespace Weapon
     /// <summary>
     /// 총에서 발사되는 총알
     /// </summary>
+    [RequireComponent(typeof(Rigidbody))]
     public class Bullet : DamagableObject
     {
+        public event Action onTriggerEnter;
+
         [SerializeField]
+        /// <summary>
+        /// 총알 속도
+        /// </summary>
         protected float _speed = 50f;
+
+        [SerializeField]
+        /// <summary>
+        /// 총알이 생성된 후 종료되는 시간
+        /// </summary>
+        protected float _disableTime = 3f;
 
         protected virtual void Start() {
             collider.isTrigger = true;          // OnTriggerEnter를 사용하기 위해 true
@@ -19,6 +34,8 @@ namespace Weapon
 
         protected void OnEnable() {
             rigidbody.AddForce(this.transform.forward * _speed);         // 오브젝트가 켜지면 앞방향으로 힘을 가함
+
+            StartCoroutine(DelayDisable());
         }
 
         protected virtual void OnTriggerEnter(Collider other) {
@@ -28,7 +45,23 @@ namespace Weapon
                 OnInflict(character);                                   // 해당 캐릭터에게 피해를 줌
             }
 
-            this.gameObject.SetActive(false);                           // 충돌한 총알 비활성화
+            onTriggerEnter();                                           // 이벤트 함수 실행
+            ClearTriggerEvent();                                        // 해당 이벤트 초기화
+        }
+
+        private void ClearTriggerEvent(){
+            foreach(Delegate d in onTriggerEnter.GetInvocationList()){
+                onTriggerEnter -= (Action)d;
+            }
+        }
+
+        protected virtual IEnumerator DelayDisable(){
+            yield return new WaitForSeconds(_disableTime);
+
+            if (gameObject.activeSelf){
+                onTriggerEnter();
+                ClearTriggerEvent(); 
+            }
         }
     }
 }

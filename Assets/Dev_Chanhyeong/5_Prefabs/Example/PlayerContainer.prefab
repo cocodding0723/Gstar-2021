@@ -718,7 +718,7 @@ MonoBehaviour:
   jumpForce: 20
   jumpKey: 32
   sprintKey: 304
-  couchKey: 306
+  crouchKey: 306
   groundDrag: 6
   airDrag: 0
   slideDrag: 2
