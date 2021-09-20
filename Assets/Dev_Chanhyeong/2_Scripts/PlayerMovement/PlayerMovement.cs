@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Keybinds")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
-    [SerializeField] private KeyCode couchKey = KeyCode.LeftControl;
+    [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
 
     [Header("Drag")]
     [SerializeField] private float groundDrag = 6f;
@@ -90,11 +90,11 @@ public class PlayerMovement : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
-        crouching = Input.GetKey(KeyCode.LeftControl);
+        crouching = Input.GetKey(crouchKey);
         
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(crouchKey))
             StartCrouch();
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(crouchKey))
             StopCrouch();
 
         moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
