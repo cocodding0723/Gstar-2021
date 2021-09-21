@@ -4,33 +4,39 @@ using ObjectTemplate.Pattern;
 
 namespace Weapon
 {
+    using Character;
+
     public class Gun : Weapon
     {
         [SerializeField]
-        protected Transform gunMuzzle;              // 총구 위치
+        /// <summary>
+        /// 총을 들고있는 캐릭터
+        /// </summary>
+        protected Character owner = null;
 
         [SerializeField]
-        protected GameObject bulletPrefab;          // 총알 프리팹
+        /// <summary>
+        /// 총구 위치
+        /// </summary>k
+        protected Transform gunMuzzle = null;        
 
         [SerializeField]
-        protected float bulletRemoveTime = 3f;
+        /// <summary>
+        /// 총알 프리팹
+        /// </summary>
+        protected GameObject bulletPrefab = null;          
 
         protected virtual void Awake() {
-            SimplePool.Preload(bulletPrefab, 20);   // 오브젝트 풀에 총알 오브젝트 캐싱
+            SimplePool.Preload(bulletPrefab, 10);   // 오브젝트 풀에 총알 오브젝트 캐싱
         }
 
-        public override void Excute(){
-            if (_prevAttackTime + _attackDelay > Time.time){           // 공격 가능한 시간이 아니면
-                return;                                                 // 함수 종료
-            }
-            
-            _prevAttackTime = Time.time;
-            // 무기 공격에 관한 정의를 상속해서 사용
+        protected override void WeaponAction(){
+            Bullet bullet = SimplePool.Spawn(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation).GetComponent<Bullet>();
 
-            Bullet bullet = SimplePool.Spawn(bulletPrefab, gunMuzzle.position, gunMuzzle.rotation).GetComponent<Bullet>();      // 오브젝트 풀에서 오브젝트 호출
+            bullet.caster = owner;                          // 총알을 발사한 사람
 
-            // 여기에서 총알이 부딪혔을때 함수
-            bullet.onTriggerEnter += () => SimplePool.Despawn(bullet.gameObject);
+            bullet.onDisable.AddListener(() => SimplePool.Despawn(bullet.gameObject));       // 총알이 부딪혔을때 다시 풀에 돌아가게
+            bullet.onDisable.AddListener(() => bullet.GetComponent<TrailRenderer>().Clear());
         }
     }
 }

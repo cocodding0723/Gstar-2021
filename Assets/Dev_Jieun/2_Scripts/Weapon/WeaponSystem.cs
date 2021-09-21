@@ -34,7 +34,7 @@ namespace Weapon
             }
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (Input.GetMouseButton(0) && currentWeapon != null)       // 현재 무기가 적용되어 있는 경우, 마우스 좌클릭 시 무기 사용
             {

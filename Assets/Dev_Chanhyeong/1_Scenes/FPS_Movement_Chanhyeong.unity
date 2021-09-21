@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 1046161766}
   - component: {fileID: 1046161765}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: ExampleGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364,11 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d0b82517b38ba4b994c8c5d7b50cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackDelay: 2
+  _attackDelay: 0.1
+  owner: {fileID: 1592133449}
   gunMuzzle: {fileID: 1903540558}
   bulletPrefab: {fileID: 1129912768442694340, guid: ac6975904a3b2a445a0f82817ce078b4,
     type: 3}
-  bulletRemoveTime: 3
 --- !u!65 &1046161766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046161763}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -659,6 +659,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1592133448 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7244146143798345325, guid: 59adf7fa53fd12641a2932ed05da219d,
+    type: 3}
+  m_PrefabInstance: {fileID: 7244146143518257214}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1592133449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592133448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c56b12cb091434f4190790b8ee0e00c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onPlayerDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1881768659 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7244146143919716508, guid: 59adf7fa53fd12641a2932ed05da219d,
@@ -689,7 +710,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903540557}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.889}
+  m_LocalPosition: {x: 0, y: 0, z: 0.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1046161764}
@@ -1030,10 +1051,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100010, guid: efe9381559c516743bd05cef82f39ebb, type: 3}
+    - target: {fileID: 7244146142797132165, guid: 59adf7fa53fd12641a2932ed05da219d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7244146142797132286, guid: 59adf7fa53fd12641a2932ed05da219d,
         type: 3}
       propertyPath: strength
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 7244146143348451228, guid: 59adf7fa53fd12641a2932ed05da219d,
         type: 3}
@@ -1067,7 +1093,7 @@ PrefabInstance:
     - target: {fileID: 592287252095783018, guid: ac6975904a3b2a445a0f82817ce078b4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.5980396
+      value: 13.384
       objectReference: {fileID: 0}
     - target: {fileID: 592287252095783018, guid: ac6975904a3b2a445a0f82817ce078b4,
         type: 3}
