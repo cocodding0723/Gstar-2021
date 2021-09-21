@@ -23,6 +23,8 @@ public class WallRun : MonoBehaviour
     [SerializeField] private float camTilt;
     [SerializeField] private float camTiltTime;
 
+    [SerializeField] private LayerMask whatIsWall;
+
     public float tilt { get; private set; }
 
     private bool wallLeft = false;
@@ -45,8 +47,8 @@ public class WallRun : MonoBehaviour
 
     void CheckWall()
     {
-        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance);
-        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallDistance, whatIsWall);
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance, whatIsWall);
     }
 
     private void Update()
@@ -58,6 +60,7 @@ public class WallRun : MonoBehaviour
             if (wallLeft)
             {
                 StartWallRun();
+                Debug.Log("dfdf");
             }
             else if (wallRight)
             {
@@ -66,6 +69,7 @@ public class WallRun : MonoBehaviour
             else
             {
                 StopWallRun();
+                Debug.Log("dfdf");
             }
         }
         else
