@@ -23,7 +23,7 @@ namespace Character
         /// </summary>
         /// <value>캐릭터의 현재 체력 량입니다.</value>
         public float HP { get => _HP; set => _HP = Mathf.Clamp(value, 0f, _Max); }
-        private float _HP;
+        private float _HP = 100f;
 
         /// <summary>
         /// 캐릭터의 사망 여부입니다.
@@ -32,6 +32,11 @@ namespace Character
         /// </summary>
         /// <value></value>
         public bool isDie { get => _HP <= 0f; }
+
+        protected virtual void Start(){
+            _HP = _Max;
+            Debug.Log(this.gameObject.name + " 캐릭터에 체력 미지정 Default 100 으로 설정됨.");
+        }
 
         protected virtual void Update()
         {

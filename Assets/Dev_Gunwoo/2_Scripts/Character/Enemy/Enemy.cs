@@ -31,7 +31,9 @@ namespace Character
         protected Transform _target;                        // Player
         protected NavMeshAgent _navMeshAgent;
 
-        protected virtual void Start(){
+        protected override void Start(){
+            base.Start();
+            
             _fieldOfView = this.GetComponentInChildren<FieldOfView>();      // 자식오브젝트 내에 있는 field of view 캐싱
             _navMeshAgent = this.GetComponent<NavMeshAgent>();              // navmeshagent 캐싱
             _target = FindObjectOfType<PlayerCharacter>().transform;        // 플레이어 캐싱
