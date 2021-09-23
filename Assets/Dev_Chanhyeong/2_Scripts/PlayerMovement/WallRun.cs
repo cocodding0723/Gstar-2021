@@ -60,7 +60,6 @@ public class WallRun : MonoBehaviour
             if (wallLeft)
             {
                 StartWallRun();
-                Debug.Log("dfdf");
             }
             else if (wallRight)
             {
@@ -69,7 +68,6 @@ public class WallRun : MonoBehaviour
             else
             {
                 StopWallRun();
-                Debug.Log("dfdf");
             }
         }
         else

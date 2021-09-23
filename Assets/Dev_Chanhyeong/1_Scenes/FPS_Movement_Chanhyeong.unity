@@ -364,11 +364,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d0b82517b38ba4b994c8c5d7b50cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _specialActionKey: 0
   _attackDelay: 0.1
-  owner: {fileID: 1592133449}
-  gunMuzzle: {fileID: 1903540558}
+  _specialActionDelay: 2
+  _owner: {fileID: 1592133449}
+  _gunMuzzle: {fileID: 1903540558}
   bulletPrefab: {fileID: 1129912768442694340, guid: ac6975904a3b2a445a0f82817ce078b4,
     type: 3}
+  _remainAmmo: 100
+  _maxAmmo: 30
 --- !u!65 &1046161766
 BoxCollider:
   m_ObjectHideFlags: 0
