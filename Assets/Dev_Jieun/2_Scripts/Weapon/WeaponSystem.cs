@@ -41,6 +41,10 @@ namespace Weapon
                 currentWeapon.Excute();
             }
 
+            if (currentWeapon != null && Input.GetKeyDown(currentWeapon.specialActionKey)){
+                currentWeapon.ExcuteSpecial();
+            }
+
             ChangeIndexToScroll();
             ChangeIndexToKeboard();
 

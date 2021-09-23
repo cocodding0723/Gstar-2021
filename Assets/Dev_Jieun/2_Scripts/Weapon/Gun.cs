@@ -17,14 +17,14 @@ namespace Weapon
         [SerializeField]
         /// <summary>
         /// 총구 위치
-        /// </summary>k
+        /// </summary>
         protected Transform gunMuzzle = null;        
 
         [SerializeField]
         /// <summary>
         /// 총알 프리팹
         /// </summary>
-        protected GameObject bulletPrefab = null;          
+        protected GameObject bulletPrefab = null;
 
         protected virtual void Awake() {
             SimplePool.Preload(bulletPrefab, 10);   // 오브젝트 풀에 총알 오브젝트 캐싱
@@ -37,6 +37,14 @@ namespace Weapon
 
             bullet.onDisable.AddListener(() => SimplePool.Despawn(bullet.gameObject));       // 총알이 부딪혔을때 다시 풀에 돌아가게
             bullet.onDisable.AddListener(() => bullet.GetComponent<TrailRenderer>().Clear());
+        }
+
+        /// <summary>
+        /// 재장전 기능
+        /// </summary>
+        public override void SpecialAction()
+        {
+            
         }
     }
 }
