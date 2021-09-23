@@ -45,6 +45,7 @@ namespace Weapon
 
         protected virtual void Awake() {
             _currentAmmo = _maxAmmo;
+            _specialActionKey = KeyCode.R;
             SimplePool.Preload(bulletPrefab, 10);   // 오브젝트 풀에 총알 오브젝트 캐싱
         }
 
