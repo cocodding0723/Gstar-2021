@@ -1,6 +1,6 @@
-<mxfile>
+<mxfile host="65bd71144e">
     <diagram id="Vg2flTddgtpCy0HkgDsV" name="게임 구조">
-        <mxGraphModel dx="786" dy="1641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="711" dy="1786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -113,531 +113,268 @@
         </mxGraphModel>
     </diagram>
     <diagram id="StGSBrwW6wdo2VP4AKJF" name="게임 흐름">
-        &#xa;        &#xa;        &#xa;        &#xa;&#xa;&#xa;&#xa;
         <mxGraphModel dx="1213" dy="664" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-            &#xa;            &#xa;            &#xa;            &#xa;&#xa;&#xa;&#xa;
             <root>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-0"/>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-1" parent="mqWFJ-n3VCicVCPcM2DQ-0"/>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-2" target="mqWFJ-n3VCicVCPcM2DQ-3">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-2" target="mqWFJ-n3VCicVCPcM2DQ-5">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-2" target="mqWFJ-n3VCicVCPcM2DQ-7">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-2" value="타이틀" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="60" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-3" target="mqWFJ-n3VCicVCPcM2DQ-11">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="414" y="340" as="targetPoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-3" value="게임 시작" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="200" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-5" value="옵션" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="190" y="200" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-7" value="게임 종료" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="520" y="200" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-11" target="mqWFJ-n3VCicVCPcM2DQ-12">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-11" target="mqWFJ-n3VCicVCPcM2DQ-19">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-11" value="이전 기록이 존재?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="334" y="340" width="160" height="70" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-12" target="mqWFJ-n3VCicVCPcM2DQ-19">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-12" value="이어서 하기&lt;br&gt;활성화" style="whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="570" y="430" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-16" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="540" y="345" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-17" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="360" y="490" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-19" target="mqWFJ-n3VCicVCPcM2DQ-22">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-19" value="새로 하기" style="whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="510" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-22" target="mqWFJ-n3VCicVCPcM2DQ-24">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-22" value="스테이지 로딩" style="whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="650" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" target="mqWFJ-n3VCicVCPcM2DQ-26">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="414" y="930" as="sourcePoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-24" value="게임 플레이" style="whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="770" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-26" target="mqWFJ-n3VCicVCPcM2DQ-22">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="580" y="1030"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="580" y="680"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-26" target="mqWFJ-n3VCicVCPcM2DQ-33">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-26" value="플레이어 사망?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="331" y="990" width="166" height="80" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-29" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="510" y="1000" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-30" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="414" y="1070" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-33" target="mqWFJ-n3VCicVCPcM2DQ-36">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-33" target="mqWFJ-n3VCicVCPcM2DQ-24">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="300" y="1170"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="300" y="800"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-33" value="게임 클리어?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="331" y="1130" width="166" height="80" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-36" target="mqWFJ-n3VCicVCPcM2DQ-22">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="210" y="1310"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="210" y="680"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-36" value="다음 스테이지 설정" style="whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="354" y="1280" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-39" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="260" y="1000" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-40" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="374" y="1230" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-45" target="mqWFJ-n3VCicVCPcM2DQ-2">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="710" y="990" as="targetPoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="474" y="990" as="sourcePoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="780" y="900"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                             <mxPoint x="780" y="90"/>
-                            &#xa;                            &#xa;                            &#xa;                            &#xa;&#xa;&#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="mqWFJ-n3VCicVCPcM2DQ-1" source="mqWFJ-n3VCicVCPcM2DQ-24" target="mqWFJ-n3VCicVCPcM2DQ-45">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="414" y="830" as="sourcePoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                         <mxPoint x="414" y="870" as="targetPoint"/>
-                        &#xa;                        &#xa;                        &#xa;                        &#xa;&#xa;&#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-45" value="게임 종료?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="331" y="860" width="166" height="80" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
                 <mxCell id="mqWFJ-n3VCicVCPcM2DQ-46" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="mqWFJ-n3VCicVCPcM2DQ-1">
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                     <mxGeometry x="510" y="870" width="40" height="20" as="geometry"/>
-                    &#xa;                    &#xa;                    &#xa;                    &#xa;&#xa;&#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;                &#xa;                &#xa;&#xa;&#xa;&#xa;
             </root>
-            &#xa;            &#xa;            &#xa;            &#xa;&#xa;&#xa;&#xa;
         </mxGraphModel>
-        &#xa;        &#xa;        &#xa;        &#xa;&#xa;&#xa;&#xa;
     </diagram>
     <diagram id="YjMzmSA9_SPSghg0DP7l" name="적 FSM">
-        &#xa;        &#xa;&#xa;
-        <mxGraphModel dx="1858" dy="564" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
-            &#xa;            &#xa;&#xa;
+        <mxGraphModel dx="1538" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-0"/>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-1" parent="vqyplgLsY-_Kr0clmJUE-0"/>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-35" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="413.5" y="450" width="410" height="280" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-4" target="vqyplgLsY-_Kr0clmJUE-20" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-4" value="Idle" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="122" y="310" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-5" value="사망" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="558.5" y="620" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-6" target="vqyplgLsY-_Kr0clmJUE-17" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-6" value="순찰" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="342" y="180" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-7" target="vqyplgLsY-_Kr0clmJUE-6" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-7" value="시작" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="342" y="80" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-12" target="vqyplgLsY-_Kr0clmJUE-5" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-12" value="현재 체력의 상태가 0인가?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="473.5" y="480" width="290" height="80" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-17" target="vqyplgLsY-_Kr0clmJUE-6" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;&#xa;
                             <mxPoint x="576" y="340"/>
-                            &#xa;                            &#xa;&#xa;
                             <mxPoint x="576" y="210"/>
-                            &#xa;                            &#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-17" target="vqyplgLsY-_Kr0clmJUE-4" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-17" value="이동 경로의 끝에 도달했는가?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="290" y="300" width="224" height="80" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="vqyplgLsY-_Kr0clmJUE-1" source="vqyplgLsY-_Kr0clmJUE-20" target="vqyplgLsY-_Kr0clmJUE-6" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-20" value="3초 기달리기" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="-50" y="310" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-36" value="상시 체크" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="577" y="420" width="83" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-44" value="" style="group" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1" connectable="0">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="-150" y="450" width="530" height="470" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-45" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-44" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry width="530" height="470" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-57" value="" style="group" parent="vqyplgLsY-_Kr0clmJUE-44" vertex="1" connectable="0">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="120" y="10" width="355" height="420" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-46" value="공격" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="85" y="360" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-47" value="추적" style="rounded=0;whiteSpace=wrap;html=1;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="85" y="130" width="120" height="60" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-57" source="vqyplgLsY-_Kr0clmJUE-49" target="vqyplgLsY-_Kr0clmJUE-47" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-49" value="플레이어가 시야에 들어왔나?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="43" width="204" height="80" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="vqyplgLsY-_Kr0clmJUE-57" source="vqyplgLsY-_Kr0clmJUE-52" target="vqyplgLsY-_Kr0clmJUE-47" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry">
-                        &#xa;                        &#xa;&#xa;
                         <Array as="points">
-                            &#xa;                            &#xa;&#xa;
                             <mxPoint x="355" y="270"/>
-                            &#xa;                            &#xa;&#xa;
                             <mxPoint x="355" y="160"/>
-                            &#xa;                            &#xa;&#xa;
                         </Array>
-                        &#xa;                        &#xa;&#xa;
                     </mxGeometry>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-57" source="vqyplgLsY-_Kr0clmJUE-52" target="vqyplgLsY-_Kr0clmJUE-46" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-52" value="플레이어가 공격 사거리내에 들어왔나?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry y="230" width="290" height="80" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="vqyplgLsY-_Kr0clmJUE-57" source="vqyplgLsY-_Kr0clmJUE-47" target="vqyplgLsY-_Kr0clmJUE-52" edge="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry relative="1" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-54" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="155" y="320" width="50" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-56" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-57" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="290" y="240" width="50" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-71" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="628.5" y="580" width="50" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-72" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="242" y="310" width="50" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-73" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="514" y="310" width="50" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
                 <mxCell id="vqyplgLsY-_Kr0clmJUE-74" value="상시 체크" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="vqyplgLsY-_Kr0clmJUE-1" vertex="1">
-                    &#xa;                    &#xa;&#xa;
                     <mxGeometry x="73.5" y="410" width="83" height="20" as="geometry"/>
-                    &#xa;                    &#xa;&#xa;
                 </mxCell>
-                &#xa;                &#xa;&#xa;
             </root>
-            &#xa;            &#xa;&#xa;
         </mxGraphModel>
-        &#xa;        &#xa;&#xa;
     </diagram>
 </mxfile>
