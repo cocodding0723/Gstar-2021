@@ -38,6 +38,7 @@ namespace Weapon
         {
             collider.isTrigger = true;          // OnTriggerEnter를 사용하기 위해 true
             rigidbody.useGravity = false;       // 총알이 아래로 휘지 않게 중력을 끔
+            rigidbody.interpolation = RigidbodyInterpolation.Interpolate;       // 리지드바디 설정
         }
 
         protected virtual void OnEnable()
