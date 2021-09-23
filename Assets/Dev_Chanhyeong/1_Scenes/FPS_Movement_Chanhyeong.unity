@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d0b82517b38ba4b994c8c5d7b50cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _specialActionKey: 0
+  _specialActionKey: 114
   _attackDelay: 0.1
   _specialActionDelay: 2
   _owner: {fileID: 1592133449}

@@ -11,7 +11,14 @@ namespace Weapon
     [RequireComponent(typeof(Rigidbody))]
     public class Bullet : DamagableObject
     {
-        public UnityEvent onTriggerEnter;
+        /// <summary>
+        /// 총알이 부딪혔을때 실행되는 이벤트
+        /// </summary>
+        public UnityEvent onTriggerEnter;                  
+
+        /// <summary>
+        /// 총알이 꺼질때 실행되는 이벤트
+        /// </summary>
         public UnityEvent onDisable;
 
         [SerializeField]
@@ -19,12 +26,6 @@ namespace Weapon
         /// 총알 속도
         /// </summary>
         protected float _speed = 50f;
-
-        [SerializeField]
-        /// <summary>
-        /// 총알이 생성된 후 종료되는 시간
-        /// </summary>
-        protected float _disableTime = 3f;
 
         [SerializeField]
         /// <summary>
@@ -43,6 +44,7 @@ namespace Weapon
 
         protected virtual void OnEnable()
         {
+            startPosition = this.transform.position;                     // 총알의 현재 위치 저장
             rigidbody.AddForce(this.transform.forward * _speed);         // 오브젝트가 켜지면 앞방향으로 힘을 가함
         }
 
@@ -56,7 +58,7 @@ namespace Weapon
 
         protected virtual void Update()
         {
-            if (Vector3.Distance(startPosition, this.transform.position) > _maxDistance)
+            if (Vector3.Distance(startPosition, this.transform.position) > _maxDistance)        // 사거리 검사
             {
                 if (this.gameObject.activeSelf)                             // 게임 오브젝트가 켜져있을때
                 {
