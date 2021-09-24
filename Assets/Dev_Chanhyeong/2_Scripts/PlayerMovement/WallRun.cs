@@ -26,6 +26,9 @@ public class WallRun : MonoBehaviour
     [SerializeField] private LayerMask whatIsWall;
 
     public float tilt { get; private set; }
+    
+    [HideInInspector]
+    public bool isWallRun = false;
 
     private bool wallLeft = false;
     private bool wallRight = false;
@@ -51,7 +54,7 @@ public class WallRun : MonoBehaviour
         wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallDistance, whatIsWall);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         CheckWall();
 

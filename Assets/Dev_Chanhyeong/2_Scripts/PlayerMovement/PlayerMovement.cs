@@ -55,11 +55,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private RaycastHit slopeHit;
     [SerializeField] private GrapplingGun grapplingGun = null;
+    private WallRun wallRun;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        wallRun = GetComponent<WallRun>();
         playerScale = transform.localScale;
     }
 
@@ -152,6 +154,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isGrounded && !crouching)
         {
+            rb.drag = groundDrag;
+            afterGrappling = false;
+        }
+        if (wallRun.isWallRun){
             rb.drag = groundDrag;
             afterGrappling = false;
         }
