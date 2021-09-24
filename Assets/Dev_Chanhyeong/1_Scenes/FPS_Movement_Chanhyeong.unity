@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -868,6 +868,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244146142797132160, guid: 59adf7fa53fd12641a2932ed05da219d,
+        type: 3}
+      propertyPath: grapleJumpPower
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244146143348451228, guid: 59adf7fa53fd12641a2932ed05da219d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59adf7fa53fd12641a2932ed05da219d, type: 3}

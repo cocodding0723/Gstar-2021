@@ -1,0 +1,99 @@
+2021-9-24
+Rendering UV GBuffer for Tutorial_LM0 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA1 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA2 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA3 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA4 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Rendering UV GBuffer for Tutorial_LMA5 51
+RGBA32F...RGBA8...RGBA8_SRGB...RGBA16F...states...
+Rendering UV normal...
+Rendering faceted UV normal...
+Rendering UV pos...
+Rendering smooth UV pos...
+Done
+Done
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA3.lz4" 2 0 3 0
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA4.lz4" 2 0 4 0
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA5.lz4" 2 0 5 0
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA1.lz4" 2 0 1 0
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LM0.lz4" 2 0 0 0
+Running ftrace fixpos12 "C:\Users\cocod\AppData\Local\Temp\frender" "uvpos_Tutorial_LMA2.lz4" 2 0 2 0
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3" 4 0 3 comp_3.bin
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4" 4 0 4 comp_4.bin
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5" 4 0 5 comp_5.bin
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1" 4 0 1 comp_1.bin
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0" 4 0 0 comp_0.bin
+Running ftrace addmul "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2" 4 0 2 comp_2.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA30.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA40.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA50.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA10.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM00.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA20.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA31.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA41.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA51.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA11.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM01.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA21.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA32.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA42.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA52.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA12.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM02.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA22.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3_diffuse" 4 16 3 "gi_Tutorial_LMA33.bin" "Tutorial_LMA3_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4_diffuse" 4 16 4 "gi_Tutorial_LMA43.bin" "Tutorial_LMA4_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5_diffuse" 4 16 5 "gi_Tutorial_LMA53.bin" "Tutorial_LMA5_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1_diffuse" 4 16 1 "gi_Tutorial_LMA13.bin" "Tutorial_LMA1_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0_diffuse" 4 16 0 "gi_Tutorial_LM03.bin" "Tutorial_LM0_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2_diffuse" 4 16 2 "gi_Tutorial_LMA23.bin" "Tutorial_LMA2_diffuse0_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA3_final" 4 16 3 "gi_Tutorial_LMA34.bin" "Tutorial_LMA3_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA4_final" 4 16 4 "gi_Tutorial_LMA44.bin" "Tutorial_LMA4_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA5_final" 4 16 5 "gi_Tutorial_LMA54.bin" "Tutorial_LMA5_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA1_final" 4 16 1 "gi_Tutorial_LMA14.bin" "Tutorial_LMA1_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LM0_final" 4 16 0 "gi_Tutorial_LM04.bin" "Tutorial_LM0_lights_HDR.lz4" vbTraceTex.bin
+Running ftrace texgi "C:\Users\cocod\AppData\Local\Temp\frender" "Tutorial_LMA2_final" 4 16 2 "gi_Tutorial_LMA24.bin" "Tutorial_LMA2_lights_HDR.lz4" vbTraceTex.bin
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "3" "Tutorial_LMA3_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "4" "Tutorial_LMA4_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "5" "Tutorial_LMA5_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "1" "Tutorial_LMA1_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "0" "Tutorial_LM0_final_HDR.lz4"
+Running denoiserOIDN c "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" 4096 0
+Running seamfixer "C:\Users\cocod\AppData\Local\Temp\frender" "2" "Tutorial_LMA2_final_HDR.lz4"
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA3_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LMA3_final.hdr" 1024
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA4_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LMA4_final.hdr" 1024
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA5_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LMA5_final.hdr" 1024
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA1_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LMA1_final.hdr" 1024
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LM0_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LM0_final.hdr" 1024
+Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/Tutorial_LMA2_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/Tutorial_LMA2_final.hdr" 1024

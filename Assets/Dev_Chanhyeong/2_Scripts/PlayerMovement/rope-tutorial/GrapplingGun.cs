@@ -71,6 +71,7 @@ public class GrapplingGun : MonoBehaviour {
 
             Vector3 direction = hit.point - player.transform.position;
 
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.GetComponent<Rigidbody>().AddForce(direction.normalized * grapleJumpPower, ForceMode.VelocityChange);
 
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
@@ -84,7 +85,7 @@ public class GrapplingGun : MonoBehaviour {
             joint.damper = damper; 
             joint.massScale = massSalce;
 
-            Destroy(joint, .25f);
+            Destroy(joint, .1f);
         }
     }
 
