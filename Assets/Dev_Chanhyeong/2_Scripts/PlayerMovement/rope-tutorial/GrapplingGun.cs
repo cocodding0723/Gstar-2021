@@ -7,7 +7,7 @@ public class GrapplingGun : MonoBehaviour {
     [SerializeField] private KeyCode grappleKey = KeyCode.E;
     [SerializeField] private KeyCode grappleJumpKey = KeyCode.Q;
     private Vector3 grapplePoint;
-    private float maxDistance = 100f;
+    private float maxDistance = 50f;
     private SpringJoint joint = null;
 
     [SerializeField] private float spring = 4f;
@@ -72,7 +72,7 @@ public class GrapplingGun : MonoBehaviour {
             Vector3 direction = hit.point - player.transform.position;
 
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            player.GetComponent<Rigidbody>().AddForce(direction.normalized * grapleJumpPower, ForceMode.VelocityChange);
+            player.GetComponent<Rigidbody>().AddForce(direction * grapleJumpPower, ForceMode.VelocityChange);
 
             float distanceFromPoint = Vector3.Distance(player.position, grapplePoint);
 
