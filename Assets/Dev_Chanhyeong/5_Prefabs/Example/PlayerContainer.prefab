@@ -568,7 +568,7 @@ MonoBehaviour:
   spring: 75
   damper: 20
   massSalce: 4.5
-  grapleJumpPower: 50
+  grapleJumpPower: 1.5
 --- !u!114 &7244146142797132286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -976,21 +976,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24ac164dc1e9f214cafbd570c104708d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallMaxDistance: 1
+  wallSpeedMultiplier: 35
+  minimumHeight: 0.5
+  maxAngleRoll: 20
+  normalizedAngleThreshold: 0.1
   orientation: {fileID: 7244146143967773913}
-  wallDistance: 1
-  minimumJumpHeight: 1.5
-  wallRunGravity: 1
-  wallRunJumpForce: 6
-  cam: {fileID: 7244146143919716511}
-  fov: 90
-  wallRunfov: 100
-  wallRunfovTime: 10
-  camTilt: 10
-  camTiltTime: 10
+  jumpDuration: 0.25
+  wallBouncing: 3
+  cameraTransitionDuration: 1
+  wallGravityDownForce: 30
+  useSprint: 0
+  isWallRunning: 0
   whatIsWall:
     serializedVersion: 2
     m_Bits: 256
-  isWallRun: 0
 --- !u!114 &7244146143798345319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1006,17 +1006,18 @@ MonoBehaviour:
   orientation: {fileID: 7244146143967773913}
   moveSpeed: 6
   airMultiplier: 0.5
-  walkSpeed: 4
-  sprintSpeed: 13
+  walkSpeed: 10
+  sprintSpeed: 25
   acceleration: 50
-  jumpForce: 20
+  jumpForce: 22
+  wallJumpForce: 7
   jumpKey: 32
   sprintKey: 304
   crouchKey: 306
   groundDrag: 6
-  airDrag: 0.25
+  airDrag: 1
   slideDrag: 2
-  grapplingDrag: 0.25
+  grapplingDrag: 0.3
   groundCheck: {fileID: 7244146143569004725}
   groundMask:
     serializedVersion: 2

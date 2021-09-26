@@ -400,7 +400,9 @@ MonoBehaviour:
   assetList:
   - Assets/Bakery/examples/content/sponza/bush.FBX
   - Assets/Bakery/examples/content/floor_lamp.FBX
-  uvOverlapAssetList: 00000000ffffffff
+  - Assets/ErbGameArt/3D Lasers Pack/Models/CylinderFromGround.fbx
+  - Assets/ErbGameArt/3D Lasers Pack/Models/Conus.fbx
+  uvOverlapAssetList: 00000000ffffffff0000000000000000
   xatlasWarningShown: 0
   foundCompatibleSetup: 1
   gpuName: NVIDIA GeForce GTX 1060 6GB

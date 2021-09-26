@@ -485,3 +485,16 @@ Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/1_LMA13_final_H
 Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/1_LMA1_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/1_LMA1_final.hdr" 1024
 Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/1_LMA5_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/1_LMA5_final.hdr" 1024
 Running halffloat2hdr "C:\Users\cocod\AppData\Local\Temp\frender/1_LMA2_final_HDR.lz4" "G:/Seoul_Hoseo_Lecture/3_2/Gstar-2021/Assets/BakeryLightmaps/1_LMA2_final.hdr" 1024
+Done
+initShaders done
+initScene done
+Done
+Done
+initShaders done
+initScene done
+Done
+Done
+initShaders done
+initScene done
+Done
+Done
