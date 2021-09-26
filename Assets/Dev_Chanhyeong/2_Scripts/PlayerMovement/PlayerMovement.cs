@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ObjectTemplate;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : OptimizeBehaviour
 {
     float playerHeight = 2f;
 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpForce = 5f;
+    public float wallJumpForce = 2.5f;
 
     [Header("Keybinds")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
@@ -39,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float groundDistance = 0.2f;
-    [SerializeField] 
+    [SerializeField]
     public bool isGrounded { get; private set; }
 
     Vector3 moveDirection;
@@ -52,15 +54,15 @@ public class PlayerMovement : MonoBehaviour
     private bool isSlope = false;
     private bool afterGrappling = false;
 
-    private Rigidbody rb;
     private RaycastHit slopeHit;
     [SerializeField] private GrapplingGun grapplingGun = null;
+    private WallRun wallRun;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        rigidbody.freezeRotation = true;
         playerScale = transform.localScale;
+        wallRun = this.GetComponent<WallRun>();
     }
 
     private void FixedUpdate()
@@ -77,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         ControlDrag();
         ControlSpeed();
 
-        if (Input.GetKeyDown(jumpKey) && isGrounded)
+        if (Input.GetKeyDown(jumpKey))
         {
             Jump();
         }
@@ -91,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
         verticalMovement = Input.GetAxisRaw("Vertical");
 
         crouching = Input.GetKey(crouchKey);
-        
         if (Input.GetKeyDown(crouchKey))
             StartCrouch();
         if (Input.GetKeyUp(crouchKey))
@@ -104,8 +105,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded)
         {
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-            rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+            rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
+        if (wallRun.isWallRunning){
+            Debug.Log("벽점프");
+            rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+            rigidbody.AddForce((wallRun.GetWallJumpDirection() + transform.up) * wallJumpForce, ForceMode.Impulse);
         }
     }
 
@@ -113,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (crouching)
         {
-            rb.AddForce(moveSpeed * Time.deltaTime * -rb.velocity.normalized * slideCounterMovement);
+            rigidbody.AddForce(moveSpeed * Time.deltaTime * -rigidbody.velocity.normalized * slideCounterMovement);
             return;
         }
         if (Input.GetKey(sprintKey) && isGrounded)
@@ -130,11 +136,11 @@ public class PlayerMovement : MonoBehaviour
     {
         transform.localScale = crouchScale;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        if (rb.velocity.magnitude > 0.5f)
+        if (rigidbody.velocity.magnitude > 0.5f)
         {
             if (isGrounded)
             {
-                rb.AddForce(orientation.transform.forward * slideForce);
+                rigidbody.AddForce(orientation.transform.forward * slideForce);
             }
         }
     }
@@ -147,43 +153,48 @@ public class PlayerMovement : MonoBehaviour
 
     void ControlDrag()
     {
-        if (crouching){
-            rb.drag = slideDrag;
+        if (crouching)
+        {
+            rigidbody.drag = slideDrag;
         }
         if (isGrounded && !crouching)
         {
-            rb.drag = groundDrag;
+            rigidbody.drag = groundDrag;
             afterGrappling = false;
         }
-        if (!isGrounded && !grapplingGun.IsGrappling() && rb.useGravity && !afterGrappling)
+        if (!isGrounded && !grapplingGun.IsGrappling() && rigidbody.useGravity && !afterGrappling)
         {
-            rb.drag = airDrag;
+            rigidbody.drag = airDrag;
         }
-        if (!isGrounded && grapplingGun.IsGrappling()){
-            rb.drag = grapplingDrag;
+        if (!isGrounded && grapplingGun.IsGrappling())
+        {
+            rigidbody.drag = grapplingDrag;
             afterGrappling = true;
         }
     }
 
     void MovePlayer()
     {
-        if (crouching && isGrounded)
+        if (!wallRun.isWallRunning)
         {
-            rb.AddForce(Vector3.down * Time.deltaTime * 0.1f);
-            return;
-        }
+            if (crouching && isGrounded)
+            {
+                rigidbody.AddForce(Vector3.down * Time.deltaTime * 0.1f);
+                return;
+            }
 
-        if (isGrounded && !isSlope)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-        }
-        else if (isGrounded && isSlope)
-        {
-            rb.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
-        }
-        else if (!isGrounded)
-        {
-            rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            if (isGrounded && !isSlope)
+            {
+                rigidbody.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (isGrounded && isSlope)
+            {
+                rigidbody.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+            }
+            else if (!isGrounded)
+            {
+                rigidbody.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+            }
         }
     }
 

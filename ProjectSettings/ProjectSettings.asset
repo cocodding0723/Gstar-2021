@@ -614,7 +614,12 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
+<<<<<<< HEAD
   scriptingDefineSymbols: {}
+=======
+  scriptingDefineSymbols:
+    1: BAKERY_INCLUDED
+>>>>>>> 6801542aea2e87fe969404ab7503063a4d6feb98
   platformArchitecture: {}
   scriptingBackend:
     Standalone: 1

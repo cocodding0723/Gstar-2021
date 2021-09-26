@@ -17,17 +17,17 @@ namespace Character
             Trace       // 추격 상태
         }
 
-        [SerializeField]
         protected FieldOfView _fieldOfView = null;          // 시야각 내에 있는지 검사
 
         [SerializeField]
         protected float attackRange = 5f;                   // 공격 범위
-        [SerializeField]
-        protected float moveSpeed = 5f;
 
         protected State prevState;                          // 이전 상태
         protected State currentState;                       // 현재 상태
-
+        
+        /// <summary>
+        /// 플레이어
+        /// </summary>
         protected Transform _target;                        // Player
         protected NavMeshAgent _navMeshAgent;
 
