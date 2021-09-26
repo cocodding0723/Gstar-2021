@@ -93,7 +93,6 @@ public class PlayerMovement : OptimizeBehaviour
         verticalMovement = Input.GetAxisRaw("Vertical");
 
         crouching = Input.GetKey(crouchKey);
-
         if (Input.GetKeyDown(crouchKey))
             StartCrouch();
         if (Input.GetKeyUp(crouchKey))
