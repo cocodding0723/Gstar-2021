@@ -47,7 +47,7 @@ MonoBehaviour:
   isGlobal: 1
   priority: 1
   blendDistance: 0
-  weight: 0
+  weight: 0.001
   sharedProfile: {fileID: 11400000, guid: adba1549b4f49794a986d1fddbe36326, type: 2}
 --- !u!114 &410968812
 MonoBehaviour:
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 25
   acceleration: 50
-  jumpForce: 22
+  jumpForce: 24
   wallJumpForce: 7
   jumpKey: 32
   sprintKey: 304

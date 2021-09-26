@@ -164,17 +164,16 @@ public class WallRun : OptimizeBehaviour {
         return 0;
     }
 
-    // public float GetCameraRoll()
-    // {
-    //     float dir = CalculateSide();
-    //     float cameraAngle = m_PlayerCharacterController.playerCamera.transform.eulerAngles.z;
-    //     float targetAngle = 0;
-    //     if(dir != 0)
-    //     {
-    //         targetAngle = Mathf.Sign(dir) * maxAngleRoll;
-    //     }
-    //     return Mathf.LerpAngle(cameraAngle, targetAngle, Mathf.Max(elapsedTimeSinceWallAttach, elapsedTimeSinceWallDetatch) / cameraTransitionDuration);
-    // } 
+    public float GetCameraRoll(float cameraAngle)
+    {
+        float dir = CalculateSide();
+        float targetAngle = 0;
+        if(dir != 0)
+        {
+            targetAngle = Mathf.Sign(dir) * maxAngleRoll;
+        }
+        return Mathf.LerpAngle(cameraAngle, targetAngle, Mathf.Max(elapsedTimeSinceWallAttach, elapsedTimeSinceWallDetatch) / cameraTransitionDuration);
+    } 
 
     public Vector3 GetWallJumpDirection()
     {
