@@ -8,24 +8,21 @@ namespace Character
     /// </summary>
     public class MeleeEnemy : Enemy
     {
-        protected override IEnumerator Attack()
-        {
-            throw new System.NotImplementedException();
-        }
+        // protected override IEnumerator Attack()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
 
         protected override IEnumerator Idle()
         {
             throw new System.NotImplementedException();
         }
 
-        protected override IEnumerator Patrol()
-        {
-            throw new System.NotImplementedException();
-        }
+        
 
-        protected override IEnumerator Trace()
-        {
-            throw new System.NotImplementedException();
-        }
+        // protected override IEnumerator Trace()
+        // {
+        //     throw new System.NotImplementedException();
+        // }
     }
 }

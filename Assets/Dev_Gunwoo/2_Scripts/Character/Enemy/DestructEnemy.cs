@@ -19,10 +19,6 @@ namespace Character
             throw new System.NotImplementedException();
         }
 
-        protected override IEnumerator Patrol()
-        {
-            throw new System.NotImplementedException();
-        }
 
         protected override IEnumerator Trace()
         {

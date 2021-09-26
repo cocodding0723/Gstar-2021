@@ -5,6 +5,7 @@ using UnityEngine.AI;
 namespace Character
 {
     [RequireComponent(typeof(NavMeshAgent))]
+
     public abstract class Enemy : Character
     {
         /// <summary>
@@ -31,6 +32,11 @@ namespace Character
         protected Transform _target;                        // Player
         protected NavMeshAgent _navMeshAgent;
 
+
+    [SerializeField]
+        Transform[] e_WayPoints = null;
+        int e_Count = 0;      
+
         protected override void Start(){
             base.Start();
             
@@ -45,6 +51,7 @@ namespace Character
             base.Update();
 
             if (_fieldOfView.visibleTargets.Count > 0){                                             // 시야 내에 플레이어가 들어 온다면
+                
                 if (Vector3.Distance(_target.position, this.transform.position) > attackRange){     // 플레이어와 사이가 공격 범위보다 크다면
                     currentState = State.Trace;                                                     // 추격 상태
                 }
@@ -65,9 +72,33 @@ namespace Character
 
         #region 상속 후 정의해야하는 부분
         protected abstract IEnumerator Idle();
-        protected abstract IEnumerator Patrol();
-        protected abstract IEnumerator Trace();
-        protected abstract IEnumerator Attack();
+        protected virtual IEnumerator Patrol()
+        {
+            while(currentState == State.Patrol)
+        {
+            if(_navMeshAgent.velocity == Vector3.zero)            //속도가 0이 되면
+            {
+                _navMeshAgent.SetDestination(e_WayPoints[e_Count++].position);
+                Debug.Log(e_Count);
+                if(e_Count >= e_WayPoints.Length)
+                {
+                    e_Count =0;
+                }
+            
+            }
+            yield return new WaitForSeconds(2f);
+        }
+        }
+        protected virtual IEnumerator Trace()
+        {
+            yield return null;
+            Debug.Log("aaaaa");
+        }
+        protected  virtual IEnumerator Attack()
+        {
+            yield return null;
+            Debug.Log("bbbbbbbb");
+        }
         #endregion
 
         protected virtual void OnDrawGizmosSelected() {
