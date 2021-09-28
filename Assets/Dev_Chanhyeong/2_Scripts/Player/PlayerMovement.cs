@@ -26,7 +26,7 @@ public class PlayerMovement : OptimizeBehaviour
     [Header("Keybindings")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
-    [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    [SerializeField] private KeyCode crouchKey = KeyCode.C;
 
     [Header("Drag")]
     [SerializeField] private float groundDrag = 6f;
@@ -52,11 +52,12 @@ public class PlayerMovement : OptimizeBehaviour
     private readonly Vector3 _crouchScale = new Vector3(1, 0.5f, 1);
     private bool _crouching = false;
     private bool _isSlope = false;
-    private bool _afterGrappling = false;
 
     private RaycastHit _slopeHit;
     [SerializeField] private GrapplingGun grapplingGun = null;
     private WallRun _wallRun;
+
+    [SerializeField] private float maxVelocity = 75f;
 
     private void Start()
     {
@@ -67,6 +68,7 @@ public class PlayerMovement : OptimizeBehaviour
 
     private void FixedUpdate()
     {
+        LimitVelocity();
         MovePlayer();
         SlopeCheck();
     }
@@ -85,6 +87,18 @@ public class PlayerMovement : OptimizeBehaviour
         }
 
         _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _slopeHit.normal);
+    }
+
+    private void LimitVelocity()
+    {
+        float scalar = rigidbody.velocity.magnitude;
+        if (!(scalar > maxVelocity)) return;
+        
+        Vector3 velocity = rigidbody.velocity;
+        Vector3 reverseDirection = -velocity.normalized;
+        float reversePower = scalar - maxVelocity;
+        velocity += reverseDirection * reversePower;
+        rigidbody.velocity = velocity;
     }
 
     private void MyInput()
@@ -159,16 +173,14 @@ public class PlayerMovement : OptimizeBehaviour
         if (IsGrounded && !_crouching)
         {
             rigidbody.drag = groundDrag;
-            _afterGrappling = false;
         }
-        if (!IsGrounded && !grapplingGun.IsGrappling() && rigidbody.useGravity && !_afterGrappling)
+        if (!IsGrounded && !grapplingGun.IsGrappling() && rigidbody.useGravity)
         {
             rigidbody.drag = airDrag;
         }
-        if (!IsGrounded && grapplingGun.IsGrappling())
+        if (grapplingGun.IsGrappling())
         {
             rigidbody.drag = grapplingDrag;
-            _afterGrappling = true;
         }
     }
 

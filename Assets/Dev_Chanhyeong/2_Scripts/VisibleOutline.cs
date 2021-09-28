@@ -10,13 +10,21 @@ public class VisibleOutline : MonoBehaviour, IVisible {
     private float blinkMultiplier = 1f;
 
     private float _targetWidth = 0f;
+    private float _elapseTime = 0f;
 
     private void Awake() {
         _outline = this.GetComponent<Outline>();
     }
 
-    private void Update() {
+    private void Update()
+    {
+        _elapseTime += Time.deltaTime;
         _outline.OutlineWidth = Mathf.Lerp(_outline.OutlineWidth, _targetWidth, Time.deltaTime);
+
+        if (_elapseTime > 1f)
+        {
+            OnInvisivle();
+        }
     }
 
     public void OnInvisivle()
@@ -26,6 +34,7 @@ public class VisibleOutline : MonoBehaviour, IVisible {
 
     public void OnVisible()
     {
-        _targetWidth = widthMax * Mathf.Sin(Time.time * blinkMultiplier);
+        _elapseTime = 0f;
+        _targetWidth = widthMax * Mathf.Sin(Time.time * blinkMultiplier) + widthMax;
     }
 }

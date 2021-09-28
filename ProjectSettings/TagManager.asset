@@ -41,3 +41,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Playerhand
+    uniqueID: 3351579597
+    locked: 0

@@ -45,7 +45,7 @@ public class GrapplingGun : MonoBehaviour {
     /// <summary>
     /// Call whenever we want to start a grapple
     /// </summary>
-    void StartGrapple() {
+    private void StartGrapple() {
         if (!Physics.Raycast(_camera.position, _direction, out var hit, maxDistance, whatIsGrappleable)) return;
         
         _grapplePoint = hit.point;
@@ -69,11 +69,12 @@ public class GrapplingGun : MonoBehaviour {
     /// <summary>
     /// Call whenever we want to stop a grapple
     /// </summary>
-    void StopGrapple() {
+    private void StopGrapple()
+    {
         Destroy(_joint);
     }
 
-    void StartGrappleJump() {
+    private void StartGrappleJump() {
         if (!Physics.Raycast(_camera.position, _direction, out var hit, maxDistance, whatIsGrappleable)) return;
         _grapplePoint = hit.point;
         _joint = player.gameObject.AddComponent<SpringJoint>();

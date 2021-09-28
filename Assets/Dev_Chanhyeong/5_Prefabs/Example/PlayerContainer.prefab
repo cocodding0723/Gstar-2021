@@ -5707,11 +5707,11 @@ MonoBehaviour:
   player: {fileID: 7244146143798345321}
   grappleKey: 101
   grappleJumpKey: 113
-  maxDistance: 75
+  maxDistance: 50
   spring: 75
   damper: 20
   massSalce: 4.5
-  grapleJumpPower: 2
+  grapleJumpPower: 8
   fieldOfView: {fileID: 2050289162}
 --- !u!114 &7244146142797132286
 MonoBehaviour:
@@ -5858,7 +5858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dce12a8e7e78df540bae8b06cdd17678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 80
+  viewRadius: 50
   viewAngle: 60
   targetMask:
     serializedVersion: 2
@@ -6162,7 +6162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallMaxDistance: 1
-  wallSpeedMultiplier: 20
+  wallSpeedMultiplier: 25
   minimumHeight: 0.5
   maxAngleRoll: 20
   normalizedAngleThreshold: 0.1
@@ -6194,15 +6194,15 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 20
   acceleration: 50
-  jumpForce: 24
+  jumpForce: 30
   wallJumpForce: 7
   jumpKey: 32
   sprintKey: 304
-  crouchKey: 306
+  crouchKey: 99
   groundDrag: 6
   airDrag: 1
   slideDrag: 2
-  grapplingDrag: 0.3
+  grapplingDrag: 0.1
   groundCheck: {fileID: 7244146143569004725}
   groundMask:
     serializedVersion: 2
@@ -6211,6 +6211,7 @@ MonoBehaviour:
   slideForce: 400
   slideCounterMovement: 0.2
   grapplingGun: {fileID: 7244146142797132160}
+  maxVelocity: 75
 --- !u!114 &7244146143798345317
 MonoBehaviour:
   m_ObjectHideFlags: 0
