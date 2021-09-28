@@ -20,62 +20,62 @@ public class FieldOfView : MonoBehaviour {
 	public float maskCutawayDst = .1f;
 
 	public MeshFilter viewMeshFilter;
-	Mesh viewMesh;
+	private Mesh _viewMesh;
 
-	void Start() {
-		viewMesh = new Mesh ();
-		viewMesh.name = "View Mesh";
+	private void Start() {
+		_viewMesh = new Mesh
+		{
+			name = "View Mesh"
+		};
 		// viewMeshFilter.mesh = viewMesh;
 
-		StartCoroutine ("FindTargetsWithDelay", .2f);
+		StartCoroutine (nameof(FindTargetsWithDelay), .2f);
 	}
 
 	private void OnDrawGizmosSelected() {
-		if (viewMesh == null){
-			viewMesh = new Mesh ();
-			viewMesh.name = "View Mesh";
+		if (_viewMesh == null){
+			_viewMesh = new Mesh
+			{
+				name = "View Mesh"
+			};
 		}
 		Gizmos.color = new Color(0f, 0f, 1f, 0.5f);
 		DrawFieldOfView();
-		Gizmos.DrawMesh(viewMesh, 0, transform.position, transform.rotation, Vector3.one);
+		Gizmos.DrawMesh(_viewMesh, 0, transform.position, transform.rotation, Vector3.one);
 	}
 
 
-	IEnumerator FindTargetsWithDelay(float delay) {
+	private IEnumerator FindTargetsWithDelay(float delay) {
 		while (true) {
 			yield return new WaitForSeconds (delay);
 			FindVisibleTargets ();
 		}
 	}
 
-	void FindVisibleTargets() {
+	private void FindVisibleTargets() {
 		visibleTargets.Clear ();
 		Collider[] targetsInViewRadius = Physics.OverlapSphere (transform.position, viewRadius, targetMask);
-        RaycastHit hit;
 
-		for (int i = 0; i < targetsInViewRadius.Length; i++) {
-			Transform target = targetsInViewRadius [i].transform;
+		foreach (var t in targetsInViewRadius)
+		{
+			Transform target = t.transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
 			IVisible visible = target.GetComponent<IVisible>();
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
-				if (!Physics.Raycast (transform.position, dirToTarget, out hit, dstToTarget, obstacleMask)) {
-					visibleTargets.Add(target);
+				if (Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask)) continue;
+				visibleTargets.Add(target);
 
-					if (visible != null){
-						visible.OnVisible();
-					}
-				}
+				visible?.OnVisible();
 			}
-			else{
-				if (visible != null){
-					visible.OnInvisivle();
-				}
+			else
+			{
+				visible?.OnInvisivle();
 			}
 		}
 	}
 
-	void DrawFieldOfView() {
+	private void DrawFieldOfView() {
 		int stepCount = Mathf.RoundToInt(viewAngle * meshResolution);
 		float stepAngleSize = viewAngle / stepCount;
 		List<Vector3> viewPoints = new List<Vector3> ();
@@ -86,7 +86,7 @@ public class FieldOfView : MonoBehaviour {
 
 			if (i > 0) {
 				bool edgeDstThresholdExceeded = Mathf.Abs (oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
-				if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded)) {
+				if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && edgeDstThresholdExceeded)) {
 					EdgeInfo edge = FindEdge (oldViewCast, newViewCast);
 					if (edge.pointA != Vector3.zero) {
 						viewPoints.Add (edge.pointA);
@@ -118,15 +118,15 @@ public class FieldOfView : MonoBehaviour {
 			}
 		}
 
-		viewMesh.Clear ();
+		_viewMesh.Clear ();
 
-		viewMesh.vertices = vertices;
-		viewMesh.triangles = triangles;
-		viewMesh.RecalculateNormals ();
+		_viewMesh.vertices = vertices;
+		_viewMesh.triangles = triangles;
+		_viewMesh.RecalculateNormals ();
 	}
 
 
-	EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast) {
+	private EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast) {
 		float minAngle = minViewCast.angle;
 		float maxAngle = maxViewCast.angle;
 		Vector3 minPoint = Vector3.zero;
@@ -150,11 +150,10 @@ public class FieldOfView : MonoBehaviour {
 	}
 
 
-	ViewCastInfo ViewCast(float globalAngle) {
+	private ViewCastInfo ViewCast(float globalAngle) {
 		Vector3 dir = DirFromAngle (globalAngle, true);
-		RaycastHit hit;
 
-		if (Physics.Raycast (transform.position, dir, out hit, viewRadius, obstacleMask)) {
+		if (Physics.Raycast (transform.position, dir, out var hit, viewRadius, obstacleMask)) {
 			return new ViewCastInfo (true, hit.point, hit.distance, globalAngle);
 		} else {
 			return new ViewCastInfo (false, transform.position + dir * viewRadius, viewRadius, globalAngle);
@@ -168,27 +167,27 @@ public class FieldOfView : MonoBehaviour {
 		return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad),0,Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
 	}
 
-	public struct ViewCastInfo {
-		public bool hit;
-		public Vector3 point;
-		public float dst;
-		public float angle;
+	private readonly struct ViewCastInfo {
+		public readonly bool hit;
+		public readonly Vector3 point;
+		public readonly float dst;
+		public readonly float angle;
 
-		public ViewCastInfo(bool _hit, Vector3 _point, float _dst, float _angle) {
-			hit = _hit;
-			point = _point;
-			dst = _dst;
-			angle = _angle;
+		public ViewCastInfo(bool hit, Vector3 point, float dst, float angle) {
+			this.hit = hit;
+			this.point = point;
+			this.dst = dst;
+			this.angle = angle;
 		}
 	}
 
-	public struct EdgeInfo {
-		public Vector3 pointA;
-		public Vector3 pointB;
+	private readonly struct EdgeInfo {
+		public readonly Vector3 pointA;
+		public readonly Vector3 pointB;
 
-		public EdgeInfo(Vector3 _pointA, Vector3 _pointB) {
-			pointA = _pointA;
-			pointB = _pointB;
+		public EdgeInfo(Vector3 pointA, Vector3 pointB) {
+			this.pointA = pointA;
+			this.pointB = pointB;
 		}
 	}
 
