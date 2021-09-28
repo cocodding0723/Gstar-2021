@@ -19,25 +19,18 @@ public class VisibleOutline : MonoBehaviour, IVisible {
     }
 
     private void Update() {
-        if (isVisible){
-            _outline.OutlineWidth = Mathf.Lerp(_outline.OutlineWidth, _targetWidth, Time.deltaTime);
-        }
-        else{
-
-        }
+        _outline.OutlineWidth = Mathf.Lerp(_outline.OutlineWidth, _targetWidth, Time.deltaTime);
     }
 
     public void OnInvisivle()
     {
         _targetWidth = 0f;
-        Debug.Log("눈에 안보임");
         isVisible = false;
     }
 
     public void OnVisible()
     {
         _targetWidth = _widthMax * Mathf.Sin(Time.time * _blinkMultiplier);
-        Debug.Log("눈에 보임");
         isVisible = true;
     }
 }

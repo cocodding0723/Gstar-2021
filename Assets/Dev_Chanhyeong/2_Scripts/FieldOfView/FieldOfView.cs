@@ -66,10 +66,10 @@ public class FieldOfView : MonoBehaviour {
 						visible.OnVisible();
 					}
 				}
-				else{
-					if (visible != null){
-						visible.OnInvisivle();
-					}
+			}
+			else{
+				if (visible != null){
+					visible.OnInvisivle();
 				}
 			}
 		}
