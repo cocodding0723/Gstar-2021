@@ -5,14 +5,14 @@ using ObjectTemplate;
 
 public class PlayerMovement : OptimizeBehaviour
 {
-    float playerHeight = 2f;
+    private readonly float _playerHeight = 2f;
 
     [SerializeField] private Transform orientation;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private float airMultiplier = 0.4f;
-    float movementMultiplier = 10f;
+    private readonly float _movementMultiplier = 10f;
 
     [Header("Sprinting")]
     [SerializeField] private float walkSpeed = 4f;
@@ -23,7 +23,7 @@ public class PlayerMovement : OptimizeBehaviour
     public float jumpForce = 5f;
     public float wallJumpForce = 2.5f;
 
-    [Header("Keybinds")]
+    [Header("Keybindings")]
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
@@ -34,35 +34,35 @@ public class PlayerMovement : OptimizeBehaviour
     [SerializeField] private float slideDrag = 4f;
     [SerializeField] private float grapplingDrag = 0f;
 
-    float horizontalMovement;
-    float verticalMovement;
+    private float _horizontalMovement;
+    private float _verticalMovement;
 
     [Header("Ground Detection")]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private float groundDistance = 0.2f;
     [SerializeField]
-    public bool isGrounded { get; private set; }
+    public bool IsGrounded { get; private set; }
 
-    private Vector3 moveDirection;
-    private Vector3 slopeMoveDirection;
+    private Vector3 _moveDirection;
+    private Vector3 _slopeMoveDirection;
     public float slideForce = 400;
     public float slideCounterMovement = 0.2f;
-    private Vector3 playerScale;
-    private Vector3 crouchScale = new Vector3(1, 0.5f, 1);
-    private bool crouching = false;
-    private bool isSlope = false;
-    private bool afterGrappling = false;
+    private Vector3 _playerScale;
+    private readonly Vector3 _crouchScale = new Vector3(1, 0.5f, 1);
+    private bool _crouching = false;
+    private bool _isSlope = false;
+    private bool _afterGrappling = false;
 
-    private RaycastHit slopeHit;
+    private RaycastHit _slopeHit;
     [SerializeField] private GrapplingGun grapplingGun = null;
-    private WallRun wallRun;
+    private WallRun _wallRun;
 
     private void Start()
     {
         rigidbody.freezeRotation = true;
-        playerScale = transform.localScale;
-        wallRun = this.GetComponent<WallRun>();
+        _playerScale = transform.localScale;
+        _wallRun = this.GetComponent<WallRun>();
     }
 
     private void FixedUpdate()
@@ -73,7 +73,7 @@ public class PlayerMovement : OptimizeBehaviour
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        IsGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         MyInput();
         ControlDrag();
@@ -84,44 +84,44 @@ public class PlayerMovement : OptimizeBehaviour
             Jump();
         }
 
-        slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+        _slopeMoveDirection = Vector3.ProjectOnPlane(_moveDirection, _slopeHit.normal);
     }
 
-    void MyInput()
+    private void MyInput()
     {
-        horizontalMovement = Input.GetAxisRaw("Horizontal");
-        verticalMovement = Input.GetAxisRaw("Vertical");
+        _horizontalMovement = Input.GetAxisRaw("Horizontal");
+        _verticalMovement = Input.GetAxisRaw("Vertical");
 
-        crouching = Input.GetKey(crouchKey);
+        _crouching = Input.GetKey(crouchKey);
         if (Input.GetKeyDown(crouchKey))
             StartCrouch();
         if (Input.GetKeyUp(crouchKey))
             StopCrouch();
 
-        moveDirection = orientation.forward * verticalMovement + orientation.right * horizontalMovement;
+        _moveDirection = orientation.forward * _verticalMovement + orientation.right * _horizontalMovement;
     }
 
-    void Jump()
+    private void Jump()
     {
-        if (isGrounded)
+        if (IsGrounded)
         {
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
             rigidbody.AddForce(transform.up * jumpForce, ForceMode.Impulse);
         }
-        if (wallRun.isWallRunning){
+        if (_wallRun.isWallRunning){
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
-            rigidbody.AddForce((wallRun.GetWallJumpDirection() + transform.up) * wallJumpForce, ForceMode.Impulse);
+            rigidbody.AddForce((_wallRun.GetWallJumpDirection() + transform.up) * wallJumpForce, ForceMode.Impulse);
         }
     }
 
-    void ControlSpeed()
+    private void ControlSpeed()
     {
-        if (crouching)
+        if (_crouching)
         {
             rigidbody.AddForce(moveSpeed * Time.deltaTime * -rigidbody.velocity.normalized * slideCounterMovement);
             return;
         }
-        if (Input.GetKey(sprintKey) && isGrounded)
+        if (Input.GetKey(sprintKey) && IsGrounded)
         {
             moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
         }
@@ -133,11 +133,11 @@ public class PlayerMovement : OptimizeBehaviour
 
     private void StartCrouch()
     {
-        transform.localScale = crouchScale;
+        transform.localScale = _crouchScale;
         transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
         if (rigidbody.velocity.magnitude > 0.5f)
         {
-            if (isGrounded)
+            if (IsGrounded)
             {
                 rigidbody.AddForce(orientation.transform.forward * slideForce);
             }
@@ -146,68 +146,68 @@ public class PlayerMovement : OptimizeBehaviour
 
     private void StopCrouch()
     {
-        transform.localScale = playerScale;
+        transform.localScale = _playerScale;
         transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
     }
 
-    void ControlDrag()
+    private void ControlDrag()
     {
-        if (crouching)
+        if (_crouching)
         {
             rigidbody.drag = slideDrag;
         }
-        if (isGrounded && !crouching)
+        if (IsGrounded && !_crouching)
         {
             rigidbody.drag = groundDrag;
-            afterGrappling = false;
+            _afterGrappling = false;
         }
-        if (!isGrounded && !grapplingGun.IsGrappling() && rigidbody.useGravity && !afterGrappling)
+        if (!IsGrounded && !grapplingGun.IsGrappling() && rigidbody.useGravity && !_afterGrappling)
         {
             rigidbody.drag = airDrag;
         }
-        if (!isGrounded && grapplingGun.IsGrappling())
+        if (!IsGrounded && grapplingGun.IsGrappling())
         {
             rigidbody.drag = grapplingDrag;
-            afterGrappling = true;
+            _afterGrappling = true;
         }
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
-        if (!wallRun.isWallRunning)
+        if (!_wallRun.isWallRunning)
         {
-            if (crouching && isGrounded)
+            if (_crouching && IsGrounded)
             {
                 rigidbody.AddForce(Vector3.down * Time.deltaTime * 0.1f);
                 return;
             }
 
-            if (isGrounded && !isSlope)
+            if (IsGrounded && !_isSlope)
             {
-                rigidbody.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+                rigidbody.AddForce(_moveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
             }
-            else if (isGrounded && isSlope)
+            else if (IsGrounded && _isSlope)
             {
-                rigidbody.AddForce(slopeMoveDirection.normalized * moveSpeed * movementMultiplier, ForceMode.Acceleration);
+                rigidbody.AddForce(_slopeMoveDirection.normalized * moveSpeed * _movementMultiplier, ForceMode.Acceleration);
             }
-            else if (!isGrounded)
+            else if (!IsGrounded)
             {
-                rigidbody.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+                rigidbody.AddForce(_moveDirection.normalized * moveSpeed * _movementMultiplier * airMultiplier, ForceMode.Acceleration);
             }
         }
     }
 
     private void SlopeCheck()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f))
+        if (Physics.Raycast(transform.position, Vector3.down, out _slopeHit, _playerHeight / 2 + 0.5f))
         {
-            if (slopeHit.normal != Vector3.up)
+            if (_slopeHit.normal != Vector3.up)
             {
-                isSlope = true;
+                _isSlope = true;
             }
             else
             {
-                isSlope = false;
+                _isSlope = false;
             }
         }
     }

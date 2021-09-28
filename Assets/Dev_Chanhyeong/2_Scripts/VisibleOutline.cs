@@ -1,18 +1,15 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Outline))]
 public class VisibleOutline : MonoBehaviour, IVisible {
     private Outline _outline = null;
-    [SerializeField]
-    private float _widthMax = 2f;
-    [SerializeField]
-    private float _blinkMultiplier = 1f;
+    [FormerlySerializedAs("_widthMax")] [SerializeField]
+    private float widthMax = 2f;
+    [FormerlySerializedAs("_blinkMultiplier")] [SerializeField]
+    private float blinkMultiplier = 1f;
 
     private float _targetWidth = 0f;
-
-    private float _elapsedTime = 0f;
-
-    private bool isVisible = false;
 
     private void Awake() {
         _outline = this.GetComponent<Outline>();
@@ -25,12 +22,10 @@ public class VisibleOutline : MonoBehaviour, IVisible {
     public void OnInvisivle()
     {
         _targetWidth = 0f;
-        isVisible = false;
     }
 
     public void OnVisible()
     {
-        _targetWidth = _widthMax * Mathf.Sin(Time.time * _blinkMultiplier);
-        isVisible = true;
+        _targetWidth = widthMax * Mathf.Sin(Time.time * blinkMultiplier);
     }
 }

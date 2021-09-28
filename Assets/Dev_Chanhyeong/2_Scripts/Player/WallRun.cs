@@ -23,23 +23,24 @@ public class WallRun : OptimizeBehaviour {
 
     [HideInInspector]
     public bool isWallRunning = false;
-    Vector3 lastWallPosition;
-    Vector3 lastWallNormal;
-    float elapsedTimeSinceJump = 0;
-    float elapsedTimeSinceWallAttach = 0;
-    float elapsedTimeSinceWallDetatch = 0;
-    bool jumping;
-    float noiseAmplitude;
-    private Vector3[] directions;
-    private RaycastHit[] hits;
 
-    private PlayerMovement playerMovement;
+    private Vector3 _lastWallPosition;
+    private Vector3 _lastWallNormal;
+    private float _elapsedTimeSinceJump = 0;
+    private float _elapsedTimeSinceWallAttach = 0;
+    private float _elapsedTimeSinceWallDetatch = 0;
+    private bool _jumping;
+    private float _noiseAmplitude;
+    private Vector3[] _directions;
+    private RaycastHit[] _hits;
+
+    private PlayerMovement _playerMovement;
     [SerializeField] private LayerMask whatIsWall;
 
     private void Start() {
-        playerMovement = this.GetComponent<PlayerMovement>();
+        _playerMovement = this.GetComponent<PlayerMovement>();
 
-        directions = new Vector3[]{ 
+        _directions = new Vector3[]{ 
             Vector3.right, 
             Vector3.right + Vector3.forward,
             Vector3.forward, 
@@ -48,16 +49,16 @@ public class WallRun : OptimizeBehaviour {
         };
     }
 
-    bool CanWallRun()
+    private bool CanWallRun()
     {
         float verticalAxis = Input.GetAxisRaw("Vertical");
         bool isSprinting = Input.GetKeyDown(KeyCode.LeftShift);
-        isSprinting = !useSprint ? true : isSprinting;
+        isSprinting = !useSprint || isSprinting;
         
-        return !playerMovement.isGrounded && verticalAxis > 0 && VerticalCheck() && isSprinting;
+        return !_playerMovement.IsGrounded && verticalAxis > 0 && VerticalCheck() && isSprinting;
     }
 
-    bool VerticalCheck()
+    private bool VerticalCheck()
     {
         return !Physics.Raycast(orientation.position, Vector3.down, minimumHeight, whatIsWall);
     }
@@ -68,20 +69,20 @@ public class WallRun : OptimizeBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            jumping = true;
+            _jumping = true;
         }
 
         if(CanAttach())
         {
-            hits = new RaycastHit[directions.Length];
+            _hits = new RaycastHit[_directions.Length];
 
-            for(int i=0; i<directions.Length; i++)
+            for(int i=0; i<_directions.Length; i++)
             {
-                Vector3 dir = orientation.TransformDirection(directions[i]);
-                Physics.Raycast(orientation.position, dir, out hits[i], wallMaxDistance, whatIsWall);
-                if(hits[i].collider != null)
+                Vector3 dir = orientation.TransformDirection(_directions[i]);
+                Physics.Raycast(orientation.position, dir, out _hits[i], wallMaxDistance, whatIsWall);
+                if(_hits[i].collider != null)
                 {
-                    Debug.DrawRay(orientation.position, dir * hits[i].distance, Color.green);
+                    Debug.DrawRay(orientation.position, dir * _hits[i].distance, Color.green);
                 }
                 else
                 {
@@ -91,41 +92,41 @@ public class WallRun : OptimizeBehaviour {
 
             if(CanWallRun())
             {   
-                hits = hits.ToList().Where(h => h.collider != null).OrderBy(h => h.distance).ToArray();
-                if(hits.Length > 0)
+                _hits = _hits.ToList().Where(h => h.collider != null).OrderBy(h => h.distance).ToArray();
+                if(_hits.Length > 0)
                 {
-                    OnWall(hits[0]);
-                    lastWallPosition = hits[0].point;
-                    lastWallNormal = hits[0].normal;
+                    OnWall(_hits[0]);
+                    _lastWallPosition = _hits[0].point;
+                    _lastWallNormal = _hits[0].normal;
                 }
             }
         }
 
         if(isWallRunning)
         {
-            elapsedTimeSinceWallDetatch = 0;
-            elapsedTimeSinceWallAttach += Time.deltaTime;
+            _elapsedTimeSinceWallDetatch = 0;
+            _elapsedTimeSinceWallAttach += Time.deltaTime;
             rigidbody.velocity += Vector3.down * wallGravityDownForce * Time.deltaTime;
             // rigidbody.useGravity = false;
         }
         else
         {   
-            elapsedTimeSinceWallAttach = 0;
-            elapsedTimeSinceWallDetatch += Time.deltaTime;
+            _elapsedTimeSinceWallAttach = 0;
+            _elapsedTimeSinceWallDetatch += Time.deltaTime;
             // rigidbody.useGravity = true;
         }
     }
 
-    bool CanAttach()
+    private bool CanAttach()
     {
         
-        if(jumping)
+        if(_jumping)
         {
-            elapsedTimeSinceJump += Time.deltaTime;
-            if(elapsedTimeSinceJump > jumpDuration)
+            _elapsedTimeSinceJump += Time.deltaTime;
+            if(_elapsedTimeSinceJump > jumpDuration)
             {
-                elapsedTimeSinceJump = 0;
-                jumping = false;
+                _elapsedTimeSinceJump = 0;
+                _jumping = false;
             }
             return false;
         }
@@ -133,34 +134,29 @@ public class WallRun : OptimizeBehaviour {
         return true;
     }
 
-    void OnWall(RaycastHit hit){
+    private void OnWall(RaycastHit hit){
         float d = Vector3.Dot(hit.normal, Vector3.up);
-        if(d >= -normalizedAngleThreshold && d <= normalizedAngleThreshold)
-        {
-            // Vector3 alongWall = Vector3.Cross(hit.normal, Vector3.up);
-            float vertical = Input.GetAxisRaw("Vertical");
-            Vector3 alongWall = orientation.TransformDirection(Vector3.forward);
+        if (!(d >= -normalizedAngleThreshold) || !(d <= normalizedAngleThreshold)) return;
+        // Vector3 alongWall = Vector3.Cross(hit.normal, Vector3.up);
+        float vertical = Input.GetAxisRaw("Vertical");
+        Vector3 alongWall = orientation.TransformDirection(Vector3.forward);
 
-            Debug.DrawRay(orientation.position, alongWall.normalized * 10, Color.green);
-            Debug.DrawRay(orientation.position, lastWallNormal * 10, Color.magenta);
+        var position = orientation.position;
+        Debug.DrawRay(position, alongWall.normalized * 10, Color.green);
+        Debug.DrawRay(position, _lastWallNormal * 10, Color.magenta);
 
-            
-            rigidbody.velocity = alongWall * vertical * wallSpeedMultiplier;
-            isWallRunning = true;
-        }
+        rigidbody.velocity = alongWall * vertical * wallSpeedMultiplier;
+        isWallRunning = true;
 
     }
 
-    float CalculateSide()
+    private float CalculateSide()
     {
-        if(isWallRunning)
-        {
-            Vector3 heading = lastWallPosition - orientation.position;
-            Vector3 perp = Vector3.Cross(orientation.forward, heading);
-            float dir = Vector3.Dot(perp, orientation.up);
-            return dir;
-        }
-        return 0;
+        if (!isWallRunning) return 0;
+        Vector3 heading = _lastWallPosition - orientation.position;
+        Vector3 perp = Vector3.Cross(orientation.forward, heading);
+        float dir = Vector3.Dot(perp, orientation.up);
+        return dir;
     }
 
     public float GetCameraRoll(float cameraAngle)
@@ -171,14 +167,14 @@ public class WallRun : OptimizeBehaviour {
         {
             targetAngle = Mathf.Sign(dir) * maxAngleRoll;
         }
-        return Mathf.LerpAngle(cameraAngle, targetAngle, Mathf.Max(elapsedTimeSinceWallAttach, elapsedTimeSinceWallDetatch) / cameraTransitionDuration);
+        return Mathf.LerpAngle(cameraAngle, targetAngle, Mathf.Max(_elapsedTimeSinceWallAttach, _elapsedTimeSinceWallDetatch) / cameraTransitionDuration);
     } 
 
     public Vector3 GetWallJumpDirection()
     {
         if(isWallRunning)
         {
-            return lastWallNormal * wallBouncing + Vector3.up;
+            return _lastWallNormal * wallBouncing + Vector3.up;
         }
         return Vector3.zero;
     } 

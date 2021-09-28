@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GrapplingRope : MonoBehaviour {
     private Spring spring;
@@ -15,25 +16,25 @@ public class GrapplingRope : MonoBehaviour {
     public float waveHeight;
     public AnimationCurve affectCurve;
 
-    [SerializeField]
-    private Transform _hook;
-    
-    void Awake() {
+    [FormerlySerializedAs("_hook")] [SerializeField]
+    private Transform hook;
+
+    private void Awake() {
         lr = GetComponent<LineRenderer>();
         spring = new Spring();
         spring.SetTarget(0);
     }
     
     //Called after Update
-    void LateUpdate() {
+    private void LateUpdate() {
         DrawRope();
     }
 
-    void DrawRope() {
+    private void DrawRope() {
         //If not grappling, don't draw rope
         if (!grapplingGun.IsGrappling()) {
             currentGrapplePosition = grapplingGun.gunTip.position;
-            _hook.transform.position = grapplingGun.gunTip.position;
+            hook.transform.position = grapplingGun.gunTip.position;
             spring.Reset();
             if (lr.positionCount > 0)
                 lr.positionCount = 0;
@@ -64,7 +65,7 @@ public class GrapplingRope : MonoBehaviour {
         }
 
         if (lr.positionCount > 0){
-            _hook.position = lr.GetPosition(lr.positionCount - 1);
+            hook.position = lr.GetPosition(lr.positionCount - 1);
         }
     }
 }

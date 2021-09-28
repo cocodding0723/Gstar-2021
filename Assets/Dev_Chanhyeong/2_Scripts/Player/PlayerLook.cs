@@ -5,21 +5,22 @@ using UnityEngine;
 public class PlayerLook : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] WallRun wallRun;
+    [SerializeField]
+    private WallRun wallRun;
 
     [SerializeField] private float sensX = 100f;
     [SerializeField] private float sensY = 100f;
 
-    [SerializeField] Transform cam = null;
-    [SerializeField] Transform orientation = null;
+    [SerializeField] private Transform cam = null;
+    [SerializeField] private Transform orientation = null;
 
-    float mouseX;
-    float mouseY;
+    private float _mouseX;
+    private float _mouseY;
 
-    float multiplier = 0.01f;
+    private float _multiplier = 0.01f;
 
-    float xRotation;
-    float yRotation;
+    private float _xRotation;
+    private float _yRotation;
 
     private void Start()
     {
@@ -29,15 +30,15 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
-        mouseX = Input.GetAxisRaw("Mouse X");
-        mouseY = Input.GetAxisRaw("Mouse Y");
+        _mouseX = Input.GetAxisRaw("Mouse X");
+        _mouseY = Input.GetAxisRaw("Mouse Y");
          
-        yRotation += mouseX * sensX * multiplier;
-        xRotation -= mouseY * sensY * multiplier;
+        _yRotation += _mouseX * sensX * _multiplier;
+        _xRotation -= _mouseY * sensY * _multiplier;
 
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
 
-        cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, wallRun.GetCameraRoll(cam.rotation.eulerAngles.z));
-        orientation.transform.rotation = Quaternion.Euler(0, yRotation, 0);
+        cam.transform.rotation = Quaternion.Euler(_xRotation, _yRotation, wallRun.GetCameraRoll(cam.rotation.eulerAngles.z));
+        orientation.transform.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
 }
