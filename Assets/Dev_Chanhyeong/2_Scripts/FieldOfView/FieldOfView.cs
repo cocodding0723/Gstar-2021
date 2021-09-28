@@ -56,10 +56,20 @@ public class FieldOfView : MonoBehaviour {
 		for (int i = 0; i < targetsInViewRadius.Length; i++) {
 			Transform target = targetsInViewRadius [i].transform;
 			Vector3 dirToTarget = (target.position - transform.position).normalized;
+			IVisible visible = target.GetComponent<IVisible>();
 			if (Vector3.Angle (transform.forward, dirToTarget) < viewAngle / 2) {
 				float dstToTarget = Vector3.Distance (transform.position, target.position);
 				if (!Physics.Raycast (transform.position, dirToTarget, out hit, dstToTarget, obstacleMask)) {
-					visibleTargets.Add (target);
+					visibleTargets.Add(target);
+
+					if (visible != null){
+						visible.OnVisible();
+					}
+				}
+				else{
+					if (visible != null){
+						visible.OnInvisivle();
+					}
 				}
 			}
 		}

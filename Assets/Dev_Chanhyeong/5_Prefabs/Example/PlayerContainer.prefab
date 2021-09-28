@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1903540558}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Gunmuzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   spring: 75
   damper: 20
   massSalce: 4.5
-  grapleJumpPower: 1.5
+  grapleJumpPower: 2
 --- !u!114 &7244146142797132286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,7 +877,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7244146143798345325}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -977,7 +977,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallMaxDistance: 1
-  wallSpeedMultiplier: 35
+  wallSpeedMultiplier: 20
   minimumHeight: 0.5
   maxAngleRoll: 20
   normalizedAngleThreshold: 0.1
@@ -1007,7 +1007,7 @@ MonoBehaviour:
   moveSpeed: 6
   airMultiplier: 0.5
   walkSpeed: 10
-  sprintSpeed: 25
+  sprintSpeed: 20
   acceleration: 50
   jumpForce: 24
   wallJumpForce: 7
