@@ -84,7 +84,7 @@ public class GrapplingGun : MonoBehaviour {
         Vector3 direction = hit.point - player.transform.position;
 
         player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player.GetComponent<Rigidbody>().AddForce(direction * grapleJumpPower, ForceMode.VelocityChange);
+        player.GetComponent<Rigidbody>().AddForce(direction * grapleJumpPower, ForceMode.Impulse);
 
         float distanceFromPoint = Vector3.Distance(player.position, _grapplePoint);
 

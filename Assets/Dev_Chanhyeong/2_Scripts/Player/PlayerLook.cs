@@ -26,6 +26,10 @@ public class PlayerLook : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        Vector3 originRot = cam.transform.rotation.eulerAngles;
+        _xRotation = originRot.x;
+        _yRotation = originRot.y;
     }
 
     private void Update()
