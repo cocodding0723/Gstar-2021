@@ -49,14 +49,18 @@ namespace Weapon
         /// <summary>
         /// 무기 공격 함수
         /// </summary>
-        public virtual void Excute(){
-            if (_prevAttackTime + _attackDelay > Time.time){            // 공격 가능한 시간이 아니면
+        public virtual void Excute()
+        {
+            if (_prevAttackTime + _attackDelay > Time.time)
+            {            // 공격 가능한 시간이 아니면
                 return;                                                 // 함수 종료
             }
-            
+
             _prevAttackTime = Time.time;                                // 이전에 무기를 사용한 시간 저장
 
-            WeaponAction();                                             // 무기의 기능 사용
+            WeaponAction();
+            // 무기의 기능 사용
+
         }
 
         /// <summary>
