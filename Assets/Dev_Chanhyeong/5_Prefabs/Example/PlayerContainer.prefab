@@ -5556,7 +5556,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5ce3f161bf76eda4fab94c4146c83818, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5711,7 +5711,7 @@ MonoBehaviour:
   spring: 75
   damper: 20
   massSalce: 4.5
-  grapleJumpPower: 8
+  grapleJumpPower: 3
   fieldOfView: {fileID: 2050289162}
 --- !u!114 &7244146142797132286
 MonoBehaviour:
@@ -5825,14 +5825,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7244146143260824936}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7244146143919716508}
   m_Father: {fileID: 7244146142727649494}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &7244146143260824934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6200,9 +6200,9 @@ MonoBehaviour:
   sprintKey: 304
   crouchKey: 99
   groundDrag: 6
-  airDrag: 1
+  airDrag: 0.5
   slideDrag: 2
-  grapplingDrag: 0.1
+  grapplingDrag: 0.3
   groundCheck: {fileID: 7244146143569004725}
   groundMask:
     serializedVersion: 2
