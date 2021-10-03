@@ -12,6 +12,18 @@ namespace Weapon
         protected override void WeaponAction(){
             // 라이플에서 총알이 발사되는 스크립트 작성
             // 탄 퍼짐 o
+
+            if(_currentAmmo > 0)
+            {
+                Bullet bullet = SimplePool.Spawn(bulletPrefab, _gunMuzzle.position, _gunMuzzle.rotation).GetComponent<Bullet>();
+
+                bullet.caster = _owner;
+
+                _currentAmmo--;
+
+                bullet.onDisable.AddListener(() => SimplePool.Despawn(bullet.gameObject));
+                bullet.onDisable.AddListener(() => bullet.GetComponent<TrailRenderer>().Clear());
+            }
         }
 
         /// <summary>
@@ -19,7 +31,9 @@ namespace Weapon
         /// </summary>
         public override void SpecialAction()
         {
-            
+            base.SpecialAction();
+
+            // 장전 애니메이션 
         }
     }
 }

@@ -43,10 +43,25 @@ namespace Weapon
         /// </summary>
         protected int _currentAmmo = 30;
 
+        [SerializeField]
+        ///<summary>
+        /// 장전 딜레이
+        /// </summary>
+        protected float _reloadDelay = 2f;
+
+        protected float _prevReloadTime;
+
         protected virtual void Awake() {
             _currentAmmo = _maxAmmo;
             _specialActionKey = KeyCode.R;
             SimplePool.Preload(bulletPrefab, 10);   // 오브젝트 풀에 총알 오브젝트 캐싱
+        }
+
+        public override void Excute()
+        {
+            if (_prevReloadTime + _reloadDelay > Time.time) return;
+
+            base.Excute();
         }
 
         protected override void WeaponAction(){
@@ -67,6 +82,9 @@ namespace Weapon
         /// </summary>
         public override void SpecialAction()
         {
+            if (_prevReloadTime + _reloadDelay > Time.time) return;
+            _prevReloadTime = Time.time;
+
             if (_maxAmmo > _currentAmmo){
                 if (_maxAmmo <= _remainAmmo){
                     _remainAmmo -= _maxAmmo - _currentAmmo;
