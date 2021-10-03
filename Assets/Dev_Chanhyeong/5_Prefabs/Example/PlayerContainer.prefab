@@ -6194,7 +6194,7 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 20
   acceleration: 50
-  jumpForce: 30
+  jumpForce: 25
   wallJumpForce: 7
   jumpKey: 32
   sprintKey: 304
